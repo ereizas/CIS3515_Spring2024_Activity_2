@@ -21,7 +21,16 @@ class MainActivity : AppCompatActivity() {
         spinner.adapter = ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,numArray)
 
         // TODO Step 3: Change TextView's text size to the number selected in the Spinner */
-        //spinner.onItemSelectedListener = object: ...
+        spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener
+        {
+            override fun onNothingSelected(parent: AdapterView<*>?)
+            {
+            }
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long)
+            {
+                displayTextView.textSize=parent!!.getItemAtPosition(position).toString().toFloat()
+            }
+        }
 
     }
 }
