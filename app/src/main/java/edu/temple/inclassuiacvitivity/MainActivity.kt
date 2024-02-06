@@ -2,6 +2,7 @@ package edu.temple.inclassuiacvitivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 
@@ -14,7 +15,11 @@ class MainActivity : AppCompatActivity() {
         val displayTextView = findViewById<TextView>(R.id.textDisplay)
 
         /* TODO Step 1: Populate this array */
-        //val numberArray = Array Of Numbers
+        val numArray = IntArray(50) {2*(it+1)}
+        /*for(i in 0..49)
+        {
+            Log.d("Title","${numberArray[i]}")
+        }*/
 
         /* TODO Step 2: Create adapter to display items from array in Spinner */
         //spinner.adapter = ArrayAdapter...
